@@ -1,6 +1,9 @@
 # Metaverse Builders DAO Member Portfolio Template
 
+Screenshot of how the app currently looks like
 ![Screenshot](documentation/screenshot.png)
+![Screenshot2](documentation/screenshot2.png)
+
 # Quickstart
 1. Run `yarn` to install dependencies.
 
