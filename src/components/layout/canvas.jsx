@@ -1,7 +1,8 @@
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { TrackballControls, Preload } from '@react-three/drei'
 import useStore from '@/helpers/store'
 import { useEffect, useRef } from 'react'
+import SkyBox from '../canvas/Skybox'
 
 const LControl = () => {
   const dom = useStore((state) => state.dom)
@@ -19,7 +20,14 @@ const LControl = () => {
     }
   }, [dom, control])
   // @ts-ignore
-  return <OrbitControls ref={control} domElement={dom.current} />
+  return (
+    <TrackballControls 
+      ref={control} 
+      domElement={dom.current} 
+      noZoom
+      noPan
+    />
+  );
 }
 const LCanvas = ({ children }) => {
   const dom = useStore((state) => state.dom)
@@ -35,6 +43,8 @@ const LCanvas = ({ children }) => {
     >
       <LControl />
       <Preload all />
+      <ambientLight />
+      <SkyBox />
       {children}
     </Canvas>
   )

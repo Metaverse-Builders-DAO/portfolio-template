@@ -21,8 +21,10 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.17.0",
+    "@mdi/js": "^6.7.96",
     "@react-three/drei": "^9.11.2",
     "@react-three/fiber": "^8.0.19",
+    "@react-three/postprocessing": "^2.3.2",
     "babel-plugin-glsl": "^1.0.0",
     "glsl-random": "^0.0.5",
     "next": "^12.1.6",

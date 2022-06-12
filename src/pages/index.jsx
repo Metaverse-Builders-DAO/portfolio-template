@@ -1,7 +1,5 @@
 import dynamic from 'next/dynamic'
-// Step 5 - delete Instructions components
-import Instructions from '@/components/dom/Instructions'
-// import Shader from '@/components/canvas/Shader/Shader'
+import Navbar from "../components/dom/Navbar";
 
 // Dynamic import is used to prevent a payload when the website start that will include threejs r3f etc..
 // WARNING ! errors might get obfuscated by using dynamic import.
@@ -15,16 +13,18 @@ const Shader = dynamic(() => import('@/components/canvas/Shader/Shader'), {
 const Page = (props) => {
   return (
     <>
-      <Instructions />
     </>
   )
 }
 
 // canvas components goes here
 // It will receive same props as Page component (from getStaticProps, etc.)
+// Insert routes here
 Page.r3f = (props) => (
   <>
-    <Shader />
+    <Shader position={[4.5,0,0]} route="/page1" />
+    <Shader position={[0,0,-4]} route="/page2" />
+    <Shader position={[-4.5,0,0]} route="/page3" />
   </>
 )
 
@@ -33,7 +33,7 @@ export default Page
 export async function getStaticProps() {
   return {
     props: {
-      title: 'Index',
+      title: 'Metaverse Portfolio',
     },
   }
 }

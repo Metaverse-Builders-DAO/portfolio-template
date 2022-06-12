@@ -25,7 +25,7 @@ const BoxComponent = ({ route }) => {
         scale={hovered ? 1.1 : 1}
       >
         <boxBufferGeometry args={[1, 1, 1]} />
-        <meshPhysicalMaterial color={route === '/' ? 'orange' : 'hotpink'} />
+        <meshPhysicalMaterial color={"#00174d"} />
       </mesh>
       <directionalLight position={[5, 5, 5]} />
       <ambientLight />
